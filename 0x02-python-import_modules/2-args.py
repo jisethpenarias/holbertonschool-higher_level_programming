@@ -6,6 +6,6 @@ if __name__ == "__main__":
     elif len(argv) == 2:
         print("1 arguments:")
     else:
-        print("{}: arguments:".format(len(argv)))
+        print("{}: arguments:".format(len(argv) - 1))
     for argum in range(1, len(argv)):
         print("{}: {}" .format(argum, argv[argum]))
