@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys 
+    import sys
     add = 0
     n = len(sys.argv)
 
