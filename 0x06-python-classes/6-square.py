@@ -6,8 +6,8 @@ class Square:
     """Represents a square"""
     def __init__(self, size=0, position=(0, 0)):
         """class builder"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     # gets the value of the variable on the instance
     @property
@@ -35,7 +35,7 @@ class Square:
             print("")
         else:
             for y in range(self.__position[1]):
-                print()
+                print("")
             for i in range(self.__size):
                 for space in range(self.__position[0]):
                     print(" ", end="")
@@ -51,7 +51,7 @@ class Square:
     @position.setter
     def position(self, value):
         """setter method for position"""
-        if type(value) is not tuple or len(value) != 2 or \
+        if type(value) is not tuple or len(value) is not 2 or \
             type(value[0]) is not int or value[0] < 0 or \
                 type(value[1]) is not int or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
