@@ -1,0 +1,114 @@
+======================
+The ``0-add-integer`` module
+======================
+
+Using function ``add_integer``
+-------------------
+
+Function that adds 2 integers.
+
+Testing suite for the function `add_integer()` that adds two numbers 
+(int or float) and returns the result as integer.
+
+Import module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+    
+Check module docstring:
+    >>> m = __import__('0-add_integer').__doc__
+    >>> len(m) > 1
+    True
+
+Check function docstring:
+    >>> f = __import__('0-add_integer').add_integer.__doc__
+    >>> len(f) > 1
+    True
+
+Checking the return of the function:
+        >>> type(add_integer(-4, 2)) == int
+        True
+
+Now use it:
+
+int with int:
+    >>> add_integer(2, 2)
+    4
+
+Int with negative int:
+    >>> add_integer(2, -3)
+    -1
+
+Negative int with int:
+    >>> add_integer(-2, 4)
+    2
+
+Negative int with negative int:
+    >>> add_integer(-2, -2)
+    -4
+
+Big numbers:
+    >>> add_integer(1213213213213213212313213212313223, 45465456465465465465465465465)
+    1213258678669678677778678677778688
+
+Float with int:
+    >>> add_integer(2.0, 3)
+    5
+
+Int with float:
+    >>> add_integer(2, 5.0)
+    7
+
+Int with negative float:
+    >>> add_integer(2, -5.0)
+    -3
+
+Negative float with int:
+    >>> add_integer(-5.0, 2)
+    -3
+
+Float with float:
+    >>> add_integer(2.0, 1.2)
+    3
+
+negative float with negative float:
+    >>> add_integer(-2.0, -1.2)
+    -3
+
+String with string:
+    >>> add_integer(a,a)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
+
+String with int:
+    >>> add_integer("H", 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+int with string:
+    >>> add_integer(2, "H")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Adding with inf:
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Call empty function:
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Call function with more than 2 arguments:
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Empty lists:
+    >>> add_integer([], [])
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+List and int:
+    >>> add_integer([2], 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
