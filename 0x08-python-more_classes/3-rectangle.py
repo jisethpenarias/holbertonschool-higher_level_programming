@@ -54,12 +54,20 @@ class Rectangle:
 
     def __str__(self):
         """new implementation of str method prints with the character #"""
+        string = ""
         if self.__width is 0 or self.__height is 0:
-            return ""
+            return string
+            # return ""
         else:
+            # for i in range(self.__height):
+                # for x in range(self.__width):
+                    # print("#", end="")
+                # if i != (self.__height - 1):
+                    # print("")
+            # return ""
+            # the previous lines also work
             for i in range(self.__height):
                 for x in range(self.__width):
-                    print("#", end="")
-                if i != (self.__height - 1):
-                    print("")
-        return ""
+                    string = string + "#"
+                string = string + '\n'
+            return string[:-1]
