@@ -5,6 +5,7 @@
 class Rectangle:
     """Represents a rectangle"""
     def __init__(self, width=0, height=0):
+        """constructor method, initializatión attribute width and heigth"""
         self.width = width
         self.height = height
 
@@ -29,6 +30,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value_height):
+        """setter method height"""
         if type(value_height) is not int:
             raise TypeError("height must be an integer")
         if value_height < 0:
