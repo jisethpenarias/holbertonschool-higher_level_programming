@@ -31,7 +31,7 @@ Import module:
     My name is   
 
     >>> say_my_name("")
-    My name is
+    My name is  
 
-    >>> my_name("John", "Smith")
+    >>> say_my_name("John", "Smith")
     My name is John Smith
