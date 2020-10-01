@@ -35,6 +35,10 @@ Two arguments:
     Traceback (most recent call last):
     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
 Dividing by None:
     >>> matrix_divided([[1,2], [3,4]], None)
     Traceback (most recent call last):
