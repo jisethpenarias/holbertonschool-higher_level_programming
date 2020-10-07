@@ -19,6 +19,10 @@ TypeError: fadfad must be an integer
 Traceback (most recent call last):
 ValueError: fadfad must be greater than 0
 
+>>> base_geometry.integer_validator("fadfad", "0")
+Traceback (most recent call last):
+TypeError: fadfad must be an integer
+
 >>> base_geometry.integer_validator("fadfad", -1234)
 Traceback (most recent call last):
 ValueError: fadfad must be greater than 0
@@ -46,3 +50,11 @@ TypeError: Dict must be an integer
 >>> base_geometry.integer_validator("tuple", (2, 5, 5))
 Traceback (most recent call last):
 TypeError: tuple must be an integer
+
+>>> base_geometry.integer_validator("A", None)
+Traceback (most recent call last):
+TypeError: A must be an integer
+
+>>> base_geometry.integer_validator("list", [0, 1, 2])
+Traceback (most recent call last):
+TypeError: list must be an integer
