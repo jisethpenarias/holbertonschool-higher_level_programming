@@ -26,3 +26,23 @@ ValueError: fadfad must be greater than 0
 >>> base_geometry.integer_validator("", 2.3)
 Traceback (most recent call last):
 TypeError:  must be an integer
+
+>>> base_geometry.integer_validator(None, "Hello")
+Traceback (most recent call last):
+TypeError: None must be an integer
+
+>>> base_geometry.integer_validator("Hello")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> base_geometry.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> base_geometry.integer_validator("Dict", {"asdfasd", 2})
+Traceback (most recent call last):
+TypeError: Dict must be an integer
+
+>>> base_geometry.integer_validator("tuple", (2, 5, 5))
+Traceback (most recent call last):
+TypeError: tuple must be an integer
