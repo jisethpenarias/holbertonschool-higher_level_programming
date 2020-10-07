@@ -15,10 +15,10 @@ Exception: area() is not implemented
 Traceback (most recent call last):
 TypeError: fadfad must be an integer
 
->>> base_geometry.integer_validator("fadfad", "0")
+>>> base_geometry.integer_validator("fadfad", 0)
 Traceback (most recent call last):
 TypeError: fadfad must be an integer
 
->>> base_geometry.integer_validator("fadfad", "-1234")
+>>> base_geometry.integer_validator("fadfad", -1234)
 Traceback (most recent call last):
 TypeError: fadfad must be an integer
