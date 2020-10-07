@@ -7,6 +7,14 @@ base_geometry
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> base_geometry = BaseGeometry()
 
+>>> base_geometry.integer_validator("", 22)
+
+>>> base_geometry.integer_validator("DFASDF", 45)
+
+>>> base_geometry.integer_validator("my_int", 12)
+
+>>> base_geometry.integer_validator(None, 89)
+
 >>> base_geometry.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
@@ -18,6 +26,8 @@ TypeError: fadfad must be an integer
 >>> base_geometry.integer_validator("fadfad", 0)
 Traceback (most recent call last):
 ValueError: fadfad must be greater than 0
+
+>>> base_geometry.integer_validator("age", 1)
 
 >>> base_geometry.integer_validator("fadfad", "0")
 Traceback (most recent call last):
