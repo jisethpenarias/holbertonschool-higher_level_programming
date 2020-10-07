@@ -8,9 +8,9 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):
     """Represents a rectangle"""
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, width, height):
         """init method"""
         super().integer_validator("width", width)
-        super().integer_validator("height", height)
         self.__width = width
+        super().integer_validator("height", height)
         self.__height = height
