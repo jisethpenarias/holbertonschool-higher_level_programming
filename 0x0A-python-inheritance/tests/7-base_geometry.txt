@@ -17,8 +17,12 @@ TypeError: fadfad must be an integer
 
 >>> base_geometry.integer_validator("fadfad", 0)
 Traceback (most recent call last):
-TypeError: fadfad must be an integer
+ValueError: fadfad must be greater than 0
 
 >>> base_geometry.integer_validator("fadfad", -1234)
 Traceback (most recent call last):
-TypeError: fadfad must be an integer
+ValueError: fadfad must be greater than 0
+
+>>> base_geometry.integer_validator("", 2.3)
+Traceback (most recent call last):
+TypeError:  must be an integer
