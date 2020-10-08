@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Saving object to a file"""
 
+
 import json
 
 
@@ -9,11 +10,9 @@ def save_to_json_file(my_obj, filename):
     a JSON representation
     """
 
-    # my object is encoded to JSON string
-    # (my_obj)Python -> (string)JSON
-    json_obj = json.dumps(my_obj)
-
     with open(filename, mode="w", encoding="utf-8") as file_opened:
         # file_opened.write(json_obj) writes the contents of string
         # to the file, returning the number of characters written.
-        return file_opened.write(json_obj)
+        # my object is encoded to JSON string
+        # (my_obj)Python -> (string)JSON
+        return file_opened.write(json.dumps(my_obj))
