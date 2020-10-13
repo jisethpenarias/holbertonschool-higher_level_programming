@@ -5,6 +5,7 @@ Unittest from models/base.py
 
 
 import unittest
+import json
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -12,6 +13,10 @@ from models.rectangle import Rectangle
 # TestBase class, children of TestCase class from the package unittest
 class TestBase(unittest.TestCase):
     """unittest TestBase"""
+
+    def setUp(self):
+        """Before test, preparing scenario"""
+        Base._Base__nb_objects = 0
 
     def test_no_id(self):
         """test case looking if the id is none"""
@@ -56,3 +61,18 @@ class TestBase(unittest.TestCase):
 
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(),  x3)
+    
+    def test_to_json_string(self):
+        """Test case list of rectangle json representation"""
+        x = "[{\"height\": 7, \"id\": 20, \"width\": 10, \"x\": 2, \"y\": 8}]"
+        rectangle_to_json = Rectangle(10, 7, 2, 8)
+        dictionary = rectangle_to_json.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(json_dictionary, x)
+
+    def test_to_json_string_none(self):
+        """Test case none rectangle json representation"""
+        json_dictionary = Base.to_json_string(None)
+        self.assertEqual(json_dictionary, "[]")
+    
+

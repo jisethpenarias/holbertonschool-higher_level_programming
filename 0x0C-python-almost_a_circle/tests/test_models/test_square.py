@@ -5,6 +5,7 @@ Unittest for models/square.py
 
 
 import unittest
+import json
 
 from models.base import Base
 from models.rectangle import Rectangle
@@ -45,7 +46,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(hasattr(r, 'weight'), False)
 
     def test_dict(self):
-        """Test case representation of rectangle"""
+        """Test case representation of Square"""
         rec = Square(10, 3, 4, 5)
         rec_dictionary = {'size': 10, 'x': 3, 'id': 5, 'y': 4}
         self.assertEqual(rec.to_dictionary(), rec_dictionary)

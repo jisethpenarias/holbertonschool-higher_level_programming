@@ -7,6 +7,7 @@ Unittest for models/rectangle.py
 import unittest
 import sys
 from io import StringIO
+import json
 
 from models.base import Base
 from models.rectangle import Rectangle
@@ -196,16 +197,3 @@ class TestRectangle(unittest.TestCase):
         rec_dictionary = {'width': 10, 'height': 2, 'x': 3, 'id': 5, 'y': 4}
         self.assertEqual(rec.to_dictionary(), rec_dictionary)
         self.assertEqual(rec.to_dictionary() is rec_dictionary, False)
-
-    def test_to_json_string(self):
-        """Test case list of rectangle json representation"""
-        x = "[{\"height\": 7, \"id\": 20, \"width\": 10, \"x\": 2, \"y\": 8}]"
-        rectangle_to_json = Rectangle(10, 7, 2, 8)
-        dictionary = rectangle_to_json.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, x)
-
-    def test_to_json_string_none(self):
-        """Test case none rectangle json representation"""
-        json_dictionary = Base.to_json_string(None)
-        self.assertEqual(json_dictionary, "[]")
