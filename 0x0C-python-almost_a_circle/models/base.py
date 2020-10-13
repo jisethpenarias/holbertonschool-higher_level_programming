@@ -96,13 +96,14 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Creates instances based on a list of instances from json file"""
+
         file_name = "{}.json".format(cls.__name__)
         try:
             list_instances = []
             with open(file_name, mode="r", encoding="utf-8") as file_opened:
                 read_data = Base.from_json_string(file_opened.read())
                 for dictionary in read_data:
-                        list_instances.append(cls.create(**dictionary))
-                    return list_instances
+                    list_instances.append(cls.create(**dictionary))
+                return list_instances
         except IOError:
             return []
