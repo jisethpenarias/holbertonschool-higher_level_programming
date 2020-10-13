@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 New Rectangle class that inherits from the Base class
 """
