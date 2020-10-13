@@ -101,8 +101,8 @@ class Base:
             list_instances = []
             with open(file_name, mode="r", encoding="utf-8") as file_opened:
                 read_data = Base.from_json_string(file_opened.read())
-            for dictionary in read_data:
-                list_instances.append(cls.create(**dictionary))
-                return list_instances
+                for dictionary in read_data:
+                        list_instances.append(cls.create(**dictionary))
+                    return list_instances
         except IOError:
             return []
