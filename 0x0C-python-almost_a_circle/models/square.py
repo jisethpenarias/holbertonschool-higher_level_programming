@@ -53,21 +53,20 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """public method that assigns an argument to each attribute"""
+        attributes = ["id", "size", "x", "y"]
         if args is not None:
-            attributes = ["id", "size", "x", "y"]
             # para (posicion , valor) en la enumeracion de args
             for idx, arg in enumerate(args):
                 # setattr() function is used to set a value to the object's
                 # attribute
                 # setattr (object, name of the atribute, value)
-                if index < 4:
-                    setattr(self, attributes[idx], arg)
+                setattr(self, attributes[idx], arg)
         for key, value in kwargs.items():
             # hasattr() function returns True if the specified object has the
             # specified attribute, otherwise False.
             # hasattr(object, attribute)
             if hasattr(self, key) is True:
-                    setattr(self, key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """dictionary representation of a Square"""
