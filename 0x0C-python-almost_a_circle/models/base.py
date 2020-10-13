@@ -70,8 +70,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
-        list_empaty = len(json_string) == 0
-        if json_string is None or json_string is list_empaty:
+        if json_string is None or json_string is (len(json_string) == 0):
             return []
         else:
             return json.loads(json_string)
