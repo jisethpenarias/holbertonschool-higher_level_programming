@@ -61,7 +61,7 @@ class TestBase(unittest.TestCase):
 
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(),  x3)
-    
+
     def test_to_json_string(self):
         """Test case list of rectangle json representation"""
         x = "[{\"height\": 7, \"id\": 20, \"width\": 10, \"x\": 2, \"y\": 8}]"
@@ -74,5 +74,3 @@ class TestBase(unittest.TestCase):
         """Test case none rectangle json representation"""
         json_dictionary = Base.to_json_string(None)
         self.assertEqual(json_dictionary, "[]")
-    
-
