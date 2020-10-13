@@ -99,12 +99,11 @@ class Base:
         """Creates instances based on a list of instances from json file"""
         file_name = "{}.json".format(cls.__name__)
         try:
+            list_instances = []
             with open(file_name, mode="r", encoding="utf-8") as file_opened:
-                read_json_string = file_opened.read()
-                read_data = Base.from_json_string(read_json_string)
-                list_instances = []
+                read_data = Base.from_json_string(file_opened.read())
             for dictionary in read_data:
                 list_instances.append(cls.create(**dictionary))
                 return list_instances
-        except:
-            return list_instances
+        except IOError:
+            return []
