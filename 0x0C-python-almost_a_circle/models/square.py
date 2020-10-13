@@ -60,7 +60,8 @@ class Square(Rectangle):
                 # setattr() function is used to set a value to the object's
                 # attribute
                 # setattr (object, name of the atribute, value)
-                setattr(self, attributes[idx], arg)
+                if index < 4:
+                    setattr(self, attributes[idx], arg)
         for key, value in kwargs.items():
             # hasattr() function returns True if the specified object has the
             # specified attribute, otherwise False.
