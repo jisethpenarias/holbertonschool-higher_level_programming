@@ -54,7 +54,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """public method that assigns an argument to each attribute"""
         if args is not None:
-            attributes = ["id", "width", "height", "x", "y"]
+            attributes = ["id", "size", "x", "y"]
             # para (posicion , valor) en la enumeracion de args
             for idx, arg in enumerate(args):
                 # setattr() function is used to set a value to the object's
