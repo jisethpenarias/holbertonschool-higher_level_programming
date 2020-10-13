@@ -19,56 +19,58 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    @staticmethod
-    def validate_integer(value_to_set, attibute_name):
-        """validate input as int"""
-        if type(value_to_set) is not int:
-            raise TypeError("{} must be an integer".format(attibute_name))
-
     @property
     def width(self):
-        """getter method width"""
+        """width getter"""
         return self.__width
 
     @width.setter
     def width(self, value_width):
-        self.validate_integer(value_width, "width")
+        """width setter"""
+        if type(value_width) is not int:
+            raise TypeError("width must be an integer")
         if value_width <= 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("width must be > 0")
         self.__width = value_width
 
     @property
     def height(self):
-        """getter method width"""
+        """height getter"""
         return self.__height
 
     @height.setter
     def height(self, value_height):
-        self.validate_integer(value_height, "height")
+        """height setter"""
+        if type(value_height) is not int:
+            raise TypeError("height must be an integer")
         if value_height <= 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value_height
+            raise ValueError("height must be > 0")
+        self.__height = value
 
     @property
     def x(self):
-        """getter method width"""
+        """x getter"""
         return self.__x
 
     @x.setter
     def x(self, value_x):
-        self.validate_integer(value_x, "x")
-        if value_x < 0:
+        """x setter"""
+        if type(value_x) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value_x
 
     @property
     def y(self):
-        """getter method width"""
+        """ recuperar y"""
         return self.__y
 
     @y.setter
     def y(self, value_y):
-        self.validate_integer(value_y, "y")
+        """ y setter"""
+        if type(value_y) is not int:
+            raise TypeError("y must be an integer")
         if value_y < 0:
             raise ValueError("y must be >= 0")
         self.__y = value_y
