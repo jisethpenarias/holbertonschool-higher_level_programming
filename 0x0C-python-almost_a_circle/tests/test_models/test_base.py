@@ -20,7 +20,7 @@ class TestBase(unittest.TestCase):
 
     def test_no_id(self):
         """test case looking if the id is none"""
-        b1 = Base(None)
+        b1 = Base()
         self.assertEqual(b1.id, 1)
 
     def test_id(self):
