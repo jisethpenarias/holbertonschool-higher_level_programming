@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          passwd=password, db=db_name)
     cur = db.cursor()
     # cur.execute return the number of states
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
         print (row)
