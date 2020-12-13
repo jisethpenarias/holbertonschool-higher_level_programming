@@ -23,9 +23,9 @@ if __name__ == "__main__":
     for idx, row in enumerate(rows):
         for col in row:
             if (idx < len(rows) - 1):
-                print (col, end=", ")
+                print(col, end=", ")
             else:
-                print (col, end="")
+                print(col, end="")
     print()
     # Close all cursors
     cur.close()
