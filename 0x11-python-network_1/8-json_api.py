@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         jR = r.json()
         if jR:
-            print("[<{}>] <{}>".format(jR.get('id'), jR.get('name')))
+            print("[{}] {}".format(jR.get('id'), jR.get('name')))
         else:
             print("No result")
     except:
