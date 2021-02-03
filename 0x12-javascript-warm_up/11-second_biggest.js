@@ -8,5 +8,5 @@ if (number.length <= 3) {
   console.log(0);
 } else {
   const numSecondBig = number.sort(function compare (a, b) { return b - a; });
-  console.log(numSecondBig[3])
+  console.log(numSecondBig[3]);
 }
