@@ -11,13 +11,12 @@ function response (err, response, body) {
     console.error(err);
   } else {
     let count = 0;
-    const searchCara = 'https://swapi-api.hbtn.io/api/people/18/';
     const resultsJson = JSON.parse(body).results;
     // console.log(resultsJson);
     for (const film of resultsJson) {
       // console.log(film.characters);
       for (const character of film.characters) {
-        if (character === searchCara) {
+        if (character.includes('18')) {
           count++;
           break;
         }
