@@ -15,8 +15,11 @@ function response (err, response, body) {
     // console.log(resultsJson);
     for (const film of resultsJson) {
       // console.log(film.characters);
-      if (film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-        count++;
+      for (const character of film.characters) {
+        if (character.includes('18')) {
+          count++;
+          break;
+        }
       }
     }
     console.log(count);
